@@ -1,15 +1,22 @@
-# Python
+# Python cache and build artifacts
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
 .venv/
 env/
-*.egg-info/
+venv/
 
-# Env & secrets
-# .env
-# *.pem
-# secrets/
-# incidents.db
-
-# Docker
+# Docker logs
 *.log
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
