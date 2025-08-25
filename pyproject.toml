@@ -1,0 +1,20 @@
+[project]
+name = "atlas-observer"
+version = "0.1.0"
+description = "Atlas (Milestone A): Airflow observer with Slack digest and Prometheus metrics"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
+    "pydantic>=2.7.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.1",
+    "prometheus-client>=0.20.0",
+    "httpx>=0.27.0",
+    "rich>=13.7.1",
+    "croniter>=2.0.5",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"

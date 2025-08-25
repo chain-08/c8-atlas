@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  atlas-observer:
+    build:
+      context: ./docker
+    image: atlas-observer:dev
+    environment:
+      AIRFLOW_BASE_URL: ${AIRFLOW_BASE_URL}
+      AIRFLOW_USERNAME: ${AIRFLOW_USERNAME}
+      AIRFLOW_PASSWORD: ${AIRFLOW_PASSWORD}
+      SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN}
+      SLACK_CHANNEL_DIGEST: ${SLACK_CHANNEL_DIGEST}
+      ATLAS_ENV: ${ATLAS_ENV}
+      POLL_INTERVAL_SEC: ${POLL_INTERVAL_SEC}
+      DIGEST_CRON_IST: ${DIGEST_CRON_IST}
+    ports:
+      - "8087:8087"
+    depends_on:
+      - airflow-webserver
