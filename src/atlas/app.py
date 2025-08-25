@@ -5,9 +5,8 @@ from croniter import croniter
 from fastapi import FastAPI, Response
 from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 from .config import settings
-# These integrations are simple clients you'll add next:
-# from .integrations.airflow import AirflowClient
-# from .integrations.slack import SlackClient
+from .integrations.airflow import AirflowClient
+from .integrations.slack import SlackClient
 from .metrics import ATLAS_INCIDENTS, ATLAS_FAILED_DAGS, ATLAS_LATE_DAGS, ATLAS_POLL_LATENCY
 from .models import DagSummary, DigestReport
 from .digest import build_slack_blocks
