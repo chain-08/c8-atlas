@@ -1,11 +1,10 @@
-# c8-atlas/docker/Dockerfile
 FROM python:3.11-slim
 WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates curl && rm -rf /var/lib/apt/lists/*
+    ca-certificates curl tzdata && rm -rf /var/lib/apt/lists/*
 
-# copy project files (context must include pyproject.toml and src/)
+# copy project files (context must be repo root)
 COPY pyproject.toml /app/pyproject.toml
 COPY src /app/src
 
